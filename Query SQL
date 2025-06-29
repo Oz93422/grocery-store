@@ -11,4 +11,4 @@ JOIN OrderItems oi ON o.OrderID = oi.OrderID
 JOIN Products p ON oi.ProductID = p.ProductID
 JOIN Prices pr ON p.ProductID = pr.ProductID
 WHERE pr.EffectiveDate = '2025-01-01'
-ORDER BY o.orderid;
+ORDER BY c.name;
