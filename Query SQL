@@ -1,0 +1,14 @@
+SELECT
+o.OrderID as 'Order ID',
+c.Name AS 'Customer Name',
+p.ProductName as 'Product Name',
+oi.Quantity,
+pr.Price,
+(oi.Quantity*pr.Price) AS 'Total Cost'
+FROM Orders o
+JOIN Customers c ON o.CustomerID = c.CustomerID
+JOIN OrderItems oi ON o.OrderID = oi.OrderID
+JOIN Products p ON oi.ProductID = p.ProductID
+JOIN Prices pr ON p.ProductID = pr.ProductID
+WHERE pr.EffectiveDate = '2025-01-01'
+ORDER BY o.orderid;
